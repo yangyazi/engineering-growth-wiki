@@ -1,0 +1,11 @@
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.site/
+site/
+.DS_Store
+Thumbs.db
+
+# 本地私有内容：不进仓库、不进构建
+.private/

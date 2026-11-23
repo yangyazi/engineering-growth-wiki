@@ -1,0 +1,74 @@
+:root {
+  --md-primary-fg-color: #293d7a;
+  --md-primary-fg-color--light: #4057a8;
+  --md-primary-fg-color--dark: #1c2b5b;
+  --md-accent-fg-color: #13a89e;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f7f8fc;
+  --md-code-bg-color: #eef1f7;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-hue: 228;
+  --md-default-bg-color: #101827;
+  --md-code-bg-color: #182235;
+}
+
+.md-typeset h1 {
+  font-weight: 780;
+  letter-spacing: -0.035em;
+}
+.md-typeset h2 {
+  margin-top: 2em;
+  font-weight: 720;
+  letter-spacing: -0.025em;
+}
+.md-typeset h3 { font-weight: 680; }
+.md-typeset .grid.cards > ul > li,
+.md-typeset .grid.cards > ol > li {
+  border-radius: 0.9rem;
+  box-shadow: 0 2px 14px rgba(30, 45, 80, 0.055);
+}
+.md-typeset .admonition,
+.md-typeset details { border-radius: 0.8rem; }
+.md-typeset table:not([class]) {
+  border-radius: 0.65rem;
+  overflow: hidden;
+  font-size: 0.88rem;
+}
+.md-header { box-shadow: 0 2px 14px rgba(20, 30, 60, 0.08); }
+.md-content__inner { padding-bottom: 3.5rem; }
+
+.hero-panel {
+  padding: clamp(1.35rem, 3vw, 2.25rem);
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 1.1rem;
+  background: linear-gradient(135deg, rgba(64, 87, 168, 0.11), rgba(19, 168, 158, 0.08));
+  margin: 0.5rem 0 1.7rem;
+}
+.hero-kicker {
+  color: var(--md-accent-fg-color);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.hero-panel h1 { margin: 0.45rem 0 0.65rem; }
+.hero-lead {
+  color: var(--md-default-fg-color--light);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  max-width: 52rem;
+}
+.hero-meta { margin-top: 1.1rem; font-size: 0.78rem; color: var(--md-default-fg-color--light); }
+.pillar-card { min-height: 100%; }
+.small-caps { font-size: 0.72rem; letter-spacing: 0.09em; font-weight: 750; color: var(--md-accent-fg-color); }
+.callout-quote {
+  border-left: 4px solid var(--md-accent-fg-color);
+  padding: 0.65rem 1rem;
+  margin: 1.2rem 0;
+  background: rgba(19, 168, 158, 0.055);
+  border-radius: 0 0.65rem 0.65rem 0;
+}

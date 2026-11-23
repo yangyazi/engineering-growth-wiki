@@ -1,0 +1,116 @@
+site_name: 工程师成长手册
+site_description: 从 AI 使用者到具备独立工程判断力的工程师
+site_author: Personal Engineering Wiki
+site_dir: site
+
+# 内容优先使用标准 Markdown；主题配置集中在这里，便于未来迁移。
+
+# 未填写 site_url：MkDocs 会生成相对链接，站点放在任意子路径下都能正常工作（已针对 GitHub Pages
+# 项目站点 /engineering-growth-wiki/ 验证）。仓库建好后建议补上，以生成正确的 sitemap 与 canonical：
+#   site_url: https://<你的用户名>.github.io/engineering-growth-wiki/
+
+strict: true
+
+theme:
+  name: material
+  language: zh
+  font: false
+  icon:
+    logo: material/compass-outline
+    repo: fontawesome/brands/github
+  favicon: assets/favicon.svg
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: teal
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - search.share
+    - toc.follow
+    - content.code.copy
+    - content.tabs.link
+
+extra_css:
+  - stylesheets/extra.css
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  # Material 图标短代码（:material-xxx: / :octicons-xxx:）需要该扩展才能渲染成 SVG
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+nav:
+  - 首页: index.md
+  - 成长方向:
+      - 成长目标: 01-成长方向/成长目标.md
+  - 工程能力:
+      - 工程能力总览: 02-工程能力/index.md
+      - 代码理解与构建: 02-工程能力/代码理解与构建.md
+      - 软件设计与抽象: 02-工程能力/软件设计与抽象.md
+      - 问题分析与 Debug: 02-工程能力/问题分析与Debug.md
+      - 系统运行与工程质量: 02-工程能力/系统运行与工程质量.md
+  - AI 时代:
+      - AI 协作原则: 03-AI时代/AI协作原则.md
+      - 能力取舍: 03-AI时代/能力取舍.md
+      - 经验如何沉淀: 03-AI时代/经验如何沉淀.md
+  - 工程训练:
+      - 工程训练总览: 04-工程训练/index.md
+      - 为什么选择真实代码库: 04-工程训练/为什么选择真实代码库.md
+      - 如何选择训练项目: 04-工程训练/如何选择训练项目.md
+      - 一次训练如何开展: 04-工程训练/一次训练如何开展.md
+      - 工程能力进阶关卡: 04-工程训练/工程能力进阶关卡.md
+  - 实践模板:
+      - 代码阅读记录: 05-实践模板/代码阅读记录.md
+      - 技术决策记录: 05-实践模板/技术决策记录.md
+      - Debug 记录: 05-实践模板/Debug记录.md
+      - 功能变更复盘: 05-实践模板/功能变更复盘.md
+      - 周复盘: 05-实践模板/周复盘.md
+  - 维护与发布:
+      - 当前行动: 06-维护与发布/当前行动.md
+      - 网站部署指南: 06-维护与发布/网站部署指南.md
+      - 主题与迁移说明: 06-维护与发布/主题与迁移说明.md
+
+copyright: 本知识库用于个人学习与持续复盘 · 持续迭代
