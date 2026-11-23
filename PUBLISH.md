@@ -1,5 +1,10 @@
 # 发布到 GitHub Pages
 
+> **当前状态：已上线** → https://yangyazi.github.io/engineering-growth-wiki/
+> 仓库：https://github.com/yangyazi/engineering-growth-wiki （Public，Pages 源 = GitHub Actions）
+> 日常只需改 `docs/` 下的文件并 `git push`，Actions 会自动重新构建发布（约 40 秒）。
+
+
 已经完成的部分：依赖装在项目内的 `.venv/`（Python 3.12 + MkDocs 1.6.1 + Material 9.8.2），`mkdocs build --strict` 构建通过，并且验证过站点放在子路径 `/engineering-growth-wiki/` 下时样式、脚本和搜索都能正常加载。仓库已在本地初始化并提交到 `main`，剩下两步：**推送到 GitHub**、**在仓库里打开 Pages**。
 
 ---
@@ -119,3 +124,25 @@ GitHub Pages 的项目站点规则是「仓库名即路径」。当前未设置 
 
 **Q：为什么本机用系统自带的 python3 装不上依赖？**
 `mkdocs-material` 9.8.x 要求 Python ≥ 3.11，若系统 `python3` 低于该版本就会报 `No matching distribution found`。换 3.11+ 的解释器创建虚拟环境即可（仓库里已有可用的 `.venv/`，它不会进 Git）。
+
+---
+
+## 自定义域名的一个坑（已经踩过一次）
+
+`yangyazi.github.io` 名下如果存在用户站点仓库（本账号是 `yangyazi/yangyazi.github.io`，2024 年的 Hexo 博客），
+并且那个仓库绑定了自定义域名（当时是 `CNAME` 文件里的 `younglo.love`），那么
+**该用户名下所有项目站点也会被 301 重定向到那个自定义域名**。
+
+如果那个域名没有解析（`dig younglo.love` 为空），整站就会打不开——2026-11-23 上线当天就是这样。
+
+处理方式：删掉 `yangyazi/yangyazi.github.io` 仓库里的 `CNAME` 文件，并在
+`Settings → Pages → Custom domain` 里清空域名。改完后 CDN 边缘缓存可能还要几分钟才过期。
+
+以后如果真的要绑自己的域名：
+
+1. DNS 加 `A` 记录指向 `185.199.108.153` / `.109.153` / `.110.153` / `.111.153`；
+2. `www` 加 `CNAME` 指向 `yangyazi.github.io`；
+3. 在 Pages 设置里填域名，等证书签发完再勾选 **Enforce HTTPS**。
+
+注意：如果以后再用 Hexo 重新部署那个老博客，`hexo deploy` 可能会把 `CNAME` 文件写回来，
+届时本项目会被再次重定向，记得检查。
