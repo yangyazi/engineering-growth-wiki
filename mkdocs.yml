@@ -5,9 +5,8 @@ site_dir: site
 
 # 内容优先使用标准 Markdown；主题配置集中在这里，便于未来迁移。
 
-# 未填写 site_url：MkDocs 会生成相对链接，站点放在任意子路径下都能正常工作（已针对 GitHub Pages
-# 项目站点 /engineering-growth-wiki/ 验证）。仓库建好后建议补上，以生成正确的 sitemap 与 canonical：
-#   site_url: https://<你的用户名>.github.io/engineering-growth-wiki/
+# GitHub Pages 项目站点地址（用于 sitemap、canonical 和分享卡片）
+site_url: https://yangyazi.github.io/engineering-growth-wiki/
 
 strict: true
 
